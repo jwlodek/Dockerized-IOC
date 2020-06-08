@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build -t ioc/simdetector .
+docker build -t epics-ioc/simdetector .

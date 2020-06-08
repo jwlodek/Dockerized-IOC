@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --single-branch --branch=feature-yml-config https://github.com/jwlodek/initIOC
+git clone https://github.com/epicsNSLS2-deploy/initIOC
 
 cd initIOC
 ./initIOCs.py -c ../initIOCs.yml

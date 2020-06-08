@@ -24,18 +24,19 @@ RUN apt-get -y install libraw1394-dev
 # Install distro package
 RUN python3 -m pip install distro
 
+# Install pyyaml, required for initIOCs.
+RUN python3 -m pip install pyyaml
+
 # copy the script
 COPY ./run_build.sh ./
 
 # run the script
 RUN bash run_build.sh
 
+# Copy our IOC config, and our create IOC script and run it.
 COPY ./initIOCs.yml ./
-
 COPY ./create_ioc.sh ./
-
-RUN python3 -m pip install pyyaml
-
 RUN bash create_ioc.sh
 
+# Define the IOC startup command to be the run target.
 CMD ["./st.cmd"]
