@@ -30,6 +30,8 @@ COPY ./run_build.sh ./
 # run the script
 RUN bash run_build.sh
 
+COPY ./initIOCs.yml ./
+
 COPY ./create_ioc.sh ./
 
 RUN python3 -m pip install pyyaml

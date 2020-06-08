@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker run -w /epics/iocs/cam-sim1 -itd ioc/simdetector
+docker run -e P="DEMO_PREFIX" -w /epics/iocs/cam-sim1 -it ioc/simdetector
