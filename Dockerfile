@@ -38,5 +38,7 @@ COPY ./initIOCs.yml ./
 COPY ./create_ioc.sh ./
 RUN bash create_ioc.sh
 
+WORKDIR /epics/iocs/cam-sim1
+
 # Define the IOC startup command to be the run target.
 CMD ["./st.cmd"]
